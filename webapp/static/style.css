@@ -1,0 +1,96 @@
+/*
+ * Basic styling for the Bill Receipt Manager app.
+ *
+ * The styles here provide a simple but pleasant user interface without
+ * relying on external CSS frameworks. Cards are used to group forms and
+ * controls, while the dashboard makes use of a flex layout to adapt to
+ * varying viewport sizes. Feel free to tweak colours and spacing to suit
+ * your taste.
+ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header, footer {
+    background-color: #007acc;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005ea6;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.chart-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.report-link a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #007acc;
+    text-decoration: underline;
+}
+
+.report-link a:hover {
+    text-decoration: none;
+}
