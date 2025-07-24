@@ -1,0 +1,7 @@
+# Ignore SQLite database and user data
+database.db
+user_data/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
