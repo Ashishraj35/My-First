@@ -1,0 +1,81 @@
+<!--
+  Basic user interface for the Bill Receipt Manager web app.
+
+  This template provides two main views: an authentication view for signing
+  up and logging in, and a dashboard view where bills can be uploaded,
+  monthly spending visualised and PDF reports generated. The UI relies on
+  the accompanying script.js for dynamic behaviour and Chart.js for the
+  charting component.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Receipt Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Load Chart.js for bar chart rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bill Receipt Manager</h1>
+    </header>
+    <main>
+        <!-- Authentication view -->
+        <section id="auth-section">
+            <div class="card">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+        <!-- Dashboard view -->
+        <section id="dashboard-section" class="hidden">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+                <button id="logout-button">Logout</button>
+            </div>
+            <!-- Chart container -->
+            <div class="chart-container">
+                <canvas id="statsChart" width="400" height="200"></canvas>
+            </div>
+            <!-- Upload form -->
+            <div class="card">
+                <h3>Upload a Bill</h3>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <input type="number" step="0.01" name="amount" placeholder="Amount" required>
+                    <input type="date" name="bill_date" required>
+                    <input type="time" name="bill_time" required>
+                    <input type="text" name="shop" placeholder="Shop Name" required>
+                    <input type="file" name="file" accept="image/*" required>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+            <!-- Report generation -->
+            <div class="card">
+                <h3>Monthly Report</h3>
+                <label for="report-month">Select Month:</label>
+                <input type="month" id="report-month" name="report-month" required>
+                <button id="generate-report">Generate PDF</button>
+                <div id="report-link" class="report-link"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Bill Receipt Manager</p>
+    </footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>
